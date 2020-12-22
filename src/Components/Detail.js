@@ -25,13 +25,13 @@ const Detail = (props) =>{
 
             console.log(data);
 
+            const border = borders.join(';');
+            const responseBorder = await axios.get(`https://restcountries.eu/rest/v2/alpha?codes=${border}`);
+            const dataBorder = await responseBorder.data;
             
-            borders.forEach(async border => {
-                const response = await axios.get(`https://restcountries.eu/rest/v2/alpha/${border}`);
-                const name = await response.data.name;
-                
-                setAllBorder(prev => [...prev,name]);
-            })
+            console.log(dataBorder);
+            
+            setAllBorder([...dataBorder]);
         }
 
         getDetails();
@@ -44,7 +44,7 @@ const Detail = (props) =>{
     return (
         <div className="container">
             <Link to="/">
-            <button className={`back-button ${props.darkMode ? "dark-mode" : ""}`}>
+            <button className="back-button">
                 <FaArrowLeft/>
                 <p>Back</p>
             </button>
@@ -78,7 +78,7 @@ const Detail = (props) =>{
                     <div className="borders">
                         <p className="text-bold">Border Countries: </p>
                             {allBorder.map(a => (
-                                <Borders value={a}/>
+                                <Borders value={a.name}/>
                             ))}
                     </div>
                 </div>
