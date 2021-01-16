@@ -21,7 +21,7 @@ export default function Main({state,setState,showDetails,All,dropDown}) {
             console.log(error.response);
             setError(true);
 
-            if(value == ""){
+            if(value === ""){
               All();
               setError(false);
             }
