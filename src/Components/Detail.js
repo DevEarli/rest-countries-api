@@ -77,8 +77,8 @@ const Detail = (props) =>{
 
                     <div className="borders">
                         <p className="text-bold">Border Countries: </p>
-                            {allBorder.map(a => (
-                                <Borders value={a.name}/>
+                            {allBorder.map((a,i) => (
+                                <Borders key={i} value={a.name}/>
                             ))}
                     </div>
                 </div>

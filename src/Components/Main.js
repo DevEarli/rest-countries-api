@@ -58,7 +58,7 @@ export default function Main({state,setState,showDetails,All,dropDown}) {
             {
             error ? <p className="error">404 not found</p> : 
             <div className="contents">
-                {state.map(data => <Card data={data} showDetails={showDetails}/>)}
+                {state.map((data,i) => <Card key={i} data={data} showDetails={showDetails}/>)}
             </div>
             }
         </div> 
