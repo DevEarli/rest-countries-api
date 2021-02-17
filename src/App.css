@@ -25,7 +25,7 @@ header {
 .navbar {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 1100px;
   margin: auto;
 }
 
@@ -37,7 +37,7 @@ header {
 }
 
 .container {
-  width: 90%;
+  width: 1100px;
   margin: auto;
 }
 
