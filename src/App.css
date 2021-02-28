@@ -230,6 +230,12 @@ a {
 }
 
 @media screen and (max-width: 500px) {
+  .navbar{
+    width: 90%;
+  }
+  .container{
+    width: 90%;
+  }
   .search-panel {
     flex-direction: column;
     gap: 50px;
