@@ -12,7 +12,7 @@ export default function Main({state,setState,showDetails,All,dropDown}) {
         let value = e.target.value;
 
           try {
-            const response = await axios.get(`https://restcountries.eu/rest/v2/name/${value}`)
+            const response = await axios.get(`https://restcountries.com/v2/name/${value}`)
             const data = await response.data;
             console.log(data);
             setState(data);

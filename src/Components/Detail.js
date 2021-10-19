@@ -14,7 +14,7 @@ const Detail = (props) =>{
     useEffect(() => {
         setAllBorder([]);
         const getDetails = async () => {
-            const response =  await axios.get(`https://restcountries.eu/rest/v2/name/${name}`);
+            const response =  await axios.get(`https://restcountries.com/v2/name/${name}`);
             const result  = await response.data[0];
             const {borders} = result;
 
@@ -24,9 +24,16 @@ const Detail = (props) =>{
             })
 
             console.log(data);
+            console.log(result);
 
-            const border = borders.join(';');
-            const responseBorder = await axios.get(`https://restcountries.eu/rest/v2/alpha?codes=${border}`);
+            if(!borders){
+                return;
+            }
+            
+            const border = borders.join(',');
+            console.log(border);
+
+            const responseBorder = await axios.get(`https://restcountries.com/v2/alpha?codes=${border}`);
             const dataBorder = await responseBorder.data;
             
             console.log(dataBorder);

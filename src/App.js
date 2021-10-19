@@ -17,7 +17,7 @@ export default function App() {
   const [state,setState] = useState([]);
 
   const getAllData = () =>{
-    axios.get("https://restcountries.eu/rest/v2/all")
+    axios.get("https://restcountries.com/v2/all")
     .then(res => {
       console.log(res.data);
       setState(res.data);
@@ -26,7 +26,7 @@ export default function App() {
 
   const dropDownFilter = (value) =>{
     console.log(value);
-    axios.get(`https://restcountries.eu/rest/v2/region/${value}`)
+    axios.get(`https://restcountries.com/v2/region/${value}`)
     .then(res => {
       setState(res.data);
     })
